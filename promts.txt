@@ -1,0 +1,49 @@
+const todoPrompt = `As an expert in CBT, IPT, and DBT with 20 years of experience, convert user input into a concise goal and a 7-point acti
+
+const songPrompt = `As a music maestro, your mission is to select a song fitting the user's mood from their journal entries, cultural backg
+User's journal entry:
+'${express}',
+User profile:
+'${userProfile}',
+Give the output in the following format:
+<song name and episode>
+Reason: <brief explanation and justification why you chose this song>
+`
+
+const podcastPrompt = `As a podcast guru, your role is to offer a podcast episode recommendation, personalized to the user's interests as ex
+User's journal entry:
+'${express}',
+User profile:
+'${userProfile}',
+Give the output in the following format:
+<Podcast name and episode>
+Reason: <brief explanation anf justification why you chose this podcast>
+`
+
+const moviePrompt = `As a film aficionado, your task is to recommend a distinctive movie tailored to the Indian user's tastes and moods, as
+User's journal entry:
+'${express}' ,
+User profile:
+'${userProfile}',
+Address as a second person.`
+
+const foodPrompt = `As world's most famous culinary whiz, your mission is to recommend a unique recipe matching the Indian user's mood from
+User's journal entry:
+'${express}'
+User profile:
+'${userProfile}'
+Address as second person
+`
+const feedbackPrompt = `Guess what! We got anonymous feedback on our AI mental health tool, Clearmind! As a top comedian-cum-therapist, make
+const dataPrompt = `
+As an esteemed psychologist specializing in detecting and managing depression, joy, optimism, activity, anxiety and stress, your task is
+user entry: ${express}.
+Give the output strictly in json format. in the following format:
+{
+Joy: <joy_rate>,
+Optimism: <optimism_rate>,
+Activity: <activity_rate>,
+Stress: <stress_rate>,
+Anxiety: <anxiety_rate>,
+Depression: <depression_rate>
+}
