@@ -72,10 +72,10 @@ const InputComponent = () => {
                 </button>
             </div>
             {
-                moodCard &&
+                userInput !== "" && moodCard &&
                 <div className="flex justify-center py-4 overflow-hidden rounded-lg shadow-lg cursor-pointer">
-                    <div className="flex flex-col justify-start bg-white px-6 py-4">
-                        <h4 className="mb-3 text-start text-xl font-semibold tracking-tight text-white">Mood Card</h4>
+                    <div className="flex w-72 flex-col justify-start px-6 py-4">
+                        <h4 className="mb-3 text-xl font-semibold tracking-tight text-center text-white">Mood Card</h4>
 
                         {
                             moodCard?.map((mood, key) => {

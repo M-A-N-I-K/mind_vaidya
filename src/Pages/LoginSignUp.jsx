@@ -29,7 +29,7 @@ const LoginSignUp = ({ showName, authName, showForgotPassword }) => {
         registerWithEmailAndPassword(name, email, password);
     }
     return (
-        <div className="flex flex-col items-center justify-center w-screen h-screen bg-gray-200 text-gray-700">
+        <div className="flex flex-col items-center justify-center w-[100vw] h-[90vh] bg-gray-200 text-gray-700">
             <h1 className="font-bold text-2xl">Welcome Back to Mind वैद्य :)</h1>
             <form className="flex flex-col bg-white rounded shadow-lg p-12 mt-12" action="">
                 {
@@ -39,7 +39,7 @@ const LoginSignUp = ({ showName, authName, showForgotPassword }) => {
                         <input className="flex items-center h-8 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2" type="text" onChange={() => setName(e.target.value)} />
                     </>
                 }
-                <label className="font-semibold text-xs" htmlFor="usernameField">Username or Email</label>
+                <label className="font-semibold mt-3 text-xs" htmlFor="usernameField">Username or Email</label>
                 <input className="flex items-center h-8 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2" type="text" onChange={() => setEmail(e.target.value)} />
                 <label className="font-semibold text-xs mt-3" htmlFor="passwordField">Password</label>
                 <input className="flex items-center h-8 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2" type="password" onChange={() => setPassword(e.target.value)} />
