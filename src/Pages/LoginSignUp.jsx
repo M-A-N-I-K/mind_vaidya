@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import { auth, logInWithEmailAndPassword, signInWithGoogle, registerWithEmailAndPassword } from "../Config/auth";
 import { useAuthState } from 'react-firebase-hooks/auth';
+import Loader from '../Utils/Loader';
 
 const LoginSignUp = ({ showName, authName, showForgotPassword }) => {
     const [name, setName] = useState("");
@@ -12,7 +13,6 @@ const LoginSignUp = ({ showName, authName, showForgotPassword }) => {
 
     useEffect(() => {
         if (loading) {
-            // maybe trigger a loading screen
             return;
         }
         if (user) setTimeout(navigate("/home"), [1000]);
