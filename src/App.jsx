@@ -6,6 +6,7 @@ import Loader from './Utils/Loader'
 const Home = lazy(() => import("./Pages/Home"))
 const LoginSignUp = lazy(() => import('./Pages/LoginSignUp'))
 const CalendarComponent = lazy(() => import("./Pages/Calendar"))
+const Dashboard = lazy(() => import("./Pages/Dashboard"))
 
 
 const App = () => {
@@ -25,6 +26,10 @@ const App = () => {
         <Route path='/calendar' element={<Suspense fallback={<Loader />}>
           <CalendarComponent />
         </Suspense>} />
+        <Route path='/dashboard' element={<Suspense fallback={<Loader />}>
+          <Dashboard />
+        </Suspense>} />
+
       </Routes>
     </HashRouter>
   )

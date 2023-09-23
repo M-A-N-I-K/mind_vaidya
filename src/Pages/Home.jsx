@@ -2,7 +2,7 @@ import React from 'react'
 import InputComponent from '../Components/InputComponent'
 const Home = () => {
     return (
-        <div className='flex w-[100vw] bg-gray-100 h-[100vh]'>
+        <div className='flex w-[100vw] bg-white h-[90vh]'>
             <InputComponent />
         </div>
     )

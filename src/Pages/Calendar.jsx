@@ -28,7 +28,7 @@ const Calendar = () => {
     }, [activeMonth]);
 
     return (
-        <div className="md:shadow-lg md:rounded p-4 bg-gray-100 md:w-96 mx-4 md:mx-auto mt-16">
+        <div className="md:shadow-lg md:rounded p-4 bg-gray-100 md:w-96 mx-4 md:mx-auto mt-32">
             <div className="w-full rounded">
                 <div className="flex items-center justify-between mb-4">
                     <div className="text-left font-bold text-xl text-black ">

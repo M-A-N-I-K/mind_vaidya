@@ -80,7 +80,7 @@ const InputComponent = () => {
     }, [result])
 
     return (
-        <div className='w-[100vw] h-[100vh] py-4 overflow-y-scroll flex flex-col justify-between items-center'>
+        <div className='w-[100vw] h-[75vh] py-4 overflow-y-scroll flex flex-col justify-between items-center'>
             <div className='w-3/4 h-[40vh]'>
                 <div className="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 ">
                     <div className="flex items-center justify-center px-3 py-2 border-b ">
