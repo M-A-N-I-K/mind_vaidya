@@ -4,47 +4,17 @@ const InputComponent = () => {
     const [userInput, setUserInput] = useState("");
     const [result, setResult] = useState("");
     const [moodCard, setMoodCard] = useState([]);
-    const prompt = `You are the world's most renowned, creative, and witty mental health expert, known for your work in the field of Behavioral Psychology, childhood trauma, CBT, depression, and anxiety. 
-    Here is a journal entry: ${userInput}.
-    
-    From this entry alone, use your expertise to identify the following things in 2-4 words. Use the entry to ALWAYS identify and provide an answer for each point even when the field is unknown or there is not enough data to determine. Be clear, precise, and witty.
-    - Mood
-    - Trigger
-    - Focus
-    - Personality
-    - Mental profile
-    - Environment
-    - Habit
-    
-    Based on the Journal entry you have to do following things : 
-    
-    Generate a funny, unique, creative, hyper-personalized, and friendly "See you again" message (20-30 words), after a line break, that'd make them want to come back to you!
-    
-    As an expert in CBT, IPT, and DBT with 20 years of experience, convert user input into a concise goal and a 7-point activities as todo for user
-    
-    As a music maestro, your mission is to select a song fitting the user's mood 
-    Give the output in the following format and put it in JSON format given below:
-    <song name and episode>
-    Reason: <brief explanation and justification why you chose this song>
-    
-    As a film aficionado, your task is to recommend a distinctive movie tailored to the Indian user's tastes and moods,
-    Address as a second person.
-    
-    As the world's most famous culinary whiz, your mission is to recommend a unique recipe matching the Indian user's mood from
-    Address as the second person
-    
-    
-    Give the output strictly in JSON format in the following format of the all the things written above:
-    {
-        message: <message generated above>
-        food: <food suggestions generated above>
-        label: <label the users condition using the description given above>
-        mood: <mood, trigger, Focus , Personality ,Mental profile ,Environment ,Habit  journal entry keep its as object and store in mood here>
-        movie: <movie suggestions as described above>
-        todo: <todo suggestions as an array with points>
-        music <music suggestions as descirbed above>
-    } 
-    Keep the output strictly as mentioned above`
+    const prompt = `You are the world's most renowned, creative and witty mental health expert, known for your work in the field of Behavioral Psychology, childhood trauma, CBT, depression and anxiety. Here is a journal entry:  <user entry>.
+    From this entry alone, use your expertise to identify the following things in 2-4 words. Use the entry to ALWAYS identify and provide an answer for each point even when the field is unknown or there is not enough data to determine. Be clear, precise and witty.
+        Mood
+        Trigger
+        Focus
+        Personality
+        Mental profile
+        Environment
+        Habit
+    Generate a funny, unique, creative, hyper-personalised and friendly See you again message (20-30 words), after a line break, that'd make them want to come back to you!
+    Remember, keep length of Mood, Trigger, Focus of maximum 2 words only! They should not exceed 2 words. Keep the output format strictly as mentioned above!`
 
     const options = {
         method: "POST",
@@ -80,8 +50,8 @@ const InputComponent = () => {
     }, [result])
 
     return (
-        <div className='w-[100vw] h-[75vh] py-4 overflow-y-scroll flex flex-col justify-between items-center'>
-            <div className='w-3/4 h-[40vh]'>
+        <div className='w-[100vw] flex flex-col justify-between items-center'>
+            <div className='w-11/12 lg:w-3/4 h-[40vh]'>
                 <div className="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 ">
                     <div className="flex items-center justify-center px-3 py-2 border-b ">
                         <button type="button" className="p-2 mx-4 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 ">
@@ -94,29 +64,14 @@ const InputComponent = () => {
                     </div>
                     <div className="px-4 py-2 bg-white rounded-b-lg">
                         <label htmlFor="editor" className="sr-only">Publish post</label>
-                        <textarea onChange={(e) => setUserInput(e.target.value)} id="editor" rows="12" className="block w-full px-0 text-sm text-gray-800 bg-white border-0 focus:ring-0" placeholder="Write Your thoughts..." required></textarea>
+                        <textarea onChange={(e) => setUserInput(e.target.value)} id="editor" rows="12" className="block w-full px-0 text-sm text-gray-800 bg-white border-0 outline-none" placeholder="Write Your thoughts..." required></textarea>
                     </div>
                 </div>
                 <button type="button" onClick={getQuery} className="inline-flex  w-full justify-center items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
                     Generate Solution
                 </button>
             </div>
-            {
-                userInput !== "" && moodCard &&
-                <div className="flex justify-center py-4 overflow-hidden rounded-lg shadow-lg cursor-pointer">
-                    <div className="flex w-72 flex-col justify-start px-6 py-4">
-                        <h4 className="mb-3 text-xl font-semibold tracking-tight text-center text-white">Mood Card</h4>
-
-                        {
-                            moodCard?.map((mood, key) => {
-                                return (
-                                    <p key={key} className="leading-normal text-gray-100">{mood}</p>
-                                )
-                            })
-                        }
-                    </div>
-                </div>
-            }
+            
         </div>
 
     )
