@@ -1,9 +1,11 @@
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import { logout, auth } from '../Config/auth';
+import { useState } from 'react';
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
+    const [openNav, setOpenNav] = useState(false);
     return (
         <nav className="relative h-[10vh] px-4 py-4 flex justify-between items-center bg-white">
             <Link className="text-3xl font-bold leading-none" to="/">
@@ -12,14 +14,14 @@ const Navbar = () => {
                 </svg>
             </Link>
             <div className="lg:hidden">
-                <button className="navbar-burger flex items-center text-blue-600 p-3">
+                <button onClick={() => setOpenNav(!openNav)} className="navbar-burger flex items-center text-blue-600 py-3">
                     <svg className="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <title>Mobile menu</title>
                         <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
                     </svg>
                 </button>
             </div>
-            <ul className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6">
+            <ul className={`${openNav ? "hidden" : "absolute z-40 top-16  bg-gray-50 shadow-md w-[90vw] px-8 py-4"} lg:top-1/2 lg:left-1/2 transform lg:-translate-y-1/2 lg:-translate-x-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6`}>
                 <li>
                     <Link className="text-sm text-gray-700 hover:text-gray-800" to="/home">Home</Link>
                 </li>
@@ -37,7 +39,7 @@ const Navbar = () => {
                     </svg>
                 </li>
                 <li>
-                    <Link className="text-sm text-gray-700 hover:text-gray-800" to="/">Services</Link>
+                    <Link className="text-sm text-gray-700 hover:text-gray-800" to="/dashboard">Dashboard</Link>
                 </li>
                 <li className="text-gray-300">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" className="w-4 h-4 current-fill" viewBox="0 0 24 24">
@@ -45,7 +47,7 @@ const Navbar = () => {
                     </svg>
                 </li>
                 <li>
-                    <Link className="text-sm text-gray-700 hover:text-gray-800" to="/">Pricing</Link>
+                    <Link className="text-sm text-gray-700 hover:text-gray-800" to="/pricing">Pricing</Link>
                 </li>
                 <li className="text-gray-300">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" className="w-4 h-4 current-fill" viewBox="0 0 24 24">
@@ -53,18 +55,18 @@ const Navbar = () => {
                     </svg>
                 </li>
                 <li>
-                    <Link className="text-sm text-gray-700 hover:text-gray-800" to="/">Contact</Link>
+                    <Link className="text-sm text-gray-700 hover:text-gray-800" to="/contact">Contact</Link>
                 </li>
             </ul>
             {!user ?
                 <>
-                    <Link className="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold  rounded-xl transition duration-200" to="/">
+                    <Link className="lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold  rounded-xl transition duration-200" to="/">
                         Sign In
                     </Link>
-                    <Link className="hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200" to="/signup">
+                    <Link className="lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200" to="/signup">
                         Sign up
                     </Link>
-                </> : <Link onClick={logout} className="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6  bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold  rounded-xl transition duration-200" to="/">
+                </> : <Link onClick={logout} className="lg:inline-block lg:ml-auto lg:mr-3 py-2 px-4 lg:px-6  bg-blue-500 hover:bg-blue-600 text-xs lg:text-sm text-white font-bold  rounded-xl transition duration-200" to="/">
                     Logout
                 </Link>
             }
