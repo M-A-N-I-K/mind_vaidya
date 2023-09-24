@@ -15,6 +15,7 @@ const LoginSignUp = ({ showName, authName, showForgotPassword }) => {
             return;
         }
         if (user) setTimeout(navigate("/home"), [1000]);
+        console.log(user);
     }, [user, loading]);
 
     const login = () => {

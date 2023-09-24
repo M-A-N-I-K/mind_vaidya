@@ -1,58 +1,59 @@
-import React from "react";
+import useUserSuggestions from "../Hooks/useUserSuggestions";
+import RecommendationCard from "../Utils/RecommendationCard"
 
 const Dashboard = () => {
+	const {parsedResult} = useUserSuggestions();
+	const data = {
+		message: "Remember, you're not alone in this. Take a break and recharge. When you're ready, come back and we'll work through it together!",
+		food: "A comforting bowl of warm chicken soup",
+		label: "anxiety",
+		mood: {
+		  Mood: "anxious",
+		  Trigger: "unknown",
+		  Focus: "none",
+		},
+		movie: "Eternal Sunshine of the Spotless Mind",
+		todo: [
+		  "Practice deep breathing exercises for 10 minutes",
+		  "Write down your worries and fears in a journal",
+		],
+		music: {
+		  song: "Don't Worry, Be Happy by Bobby McFerrin",
+		  episode: "Episode #23",
+		  Reason: "This upbeat and cheerful song will help uplift your spirits and remind you to stay positive",
+		},
+	  };
 	return (
 		<main className="pt-16 max-h-screen overflow-auto">
 			<div className="px-6 py-8">
-				<div className="max-w-4xl mx-auto">
+				<div className="max-w-6xl mx-auto">
 					<div className="bg-white rounded-3xl p-8 mb-5">
-						<h1 className="text-3xl text-center font-bold mb-10">
-							Things that you should try today
+						<h1 className="text-xl text-gray-500 text-center font-bold mb-10">
+							{parsedResult?.message}
 						</h1>
 
 
 						<hr className="my-10" />
 
-						<div className="grid grid-cols-1 lg:grid-cols-2 gap-x-20">
+						<div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12">
 							<div>
 								<h2 className="text-2xl font-bold mb-4">Stats</h2>
 
 								<div className="grid grid-cols-2 gap-4">
 									<div className="col-span-2">
-										<div className="p-4 bg-green-100 rounded-xl">
-											<div className="font-bold text-xl text-gray-800 leading-none">
-												Good day, <br />
-												Kristin
-											</div>
-											<div className="mt-5">
-												<button
-													type="button"
-													className="inline-flex items-center justify-center py-2 px-3 rounded-xl bg-white text-gray-800 hover:text-green-500 text-sm font-semibold transition"
-												>
-													Start tracking
-												</button>
-											</div>
-										</div>
-									</div>
-									<div className="p-4 bg-yellow-100 rounded-xl text-gray-800">
-										<div className="font-bold text-2xl leading-none">
-											20
-										</div>
-										<div className="mt-2">Tasks finished</div>
-									</div>
-									<div className="p-4 bg-yellow-100 rounded-xl text-gray-800">
-										<div className="font-bold text-2xl leading-none">
-											5,5
-										</div>
-										<div className="mt-2">Tracked hours</div>
+										<RecommendationCard title={"Song Recommendation"} data={parsedResult?.music}/>
 									</div>
 									<div className="col-span-2">
-										<div className="p-4 bg-purple-100 rounded-xl text-gray-800">
-											<div className="font-bold text-xl leading-none">
-												Your daily plan
+										<div className="p-4 bg-yellow-100 rounded-xl text-gray-800">
+											<div className="font-bold text-lg leading-none">
+												Food Recommendations
 											</div>
-											<div className="mt-2">5 of 8 completed</div>
+											<div className="mt-2 text-sm">{parsedResult?.food}</div>
 										</div>
+									</div>
+									
+									<div className="col-span-2">
+										<RecommendationCard title={"Movie Recommendation"} data={parsedResult?.movie}/>
 									</div>
 								</div>
 							</div>
@@ -62,74 +63,22 @@ const Dashboard = () => {
 								</h2>
 
 								<div className="space-y-4">
-									<div className="p-4 bg-white border rounded-xl text-gray-800 space-y-2">
-										<div className="flex justify-between">
-											<div className="text-gray-400 text-xs">
-												Number 10
-											</div>
-											<div className="text-gray-400 text-xs">4h</div>
+									{parsedResult?.todo?.map((item,key) =>{
+										return(
+
+											<div key={key} className="p-4 bg-white border rounded-xl text-gray-800 space-y-2">
+											<p
+												
+												className="font-bold hover:text-yellow-800 hover:underline"
+												>
+												{item}
+											</p>
+											
 										</div>
-										<a
-											href="javascript:void(0)"
-											className="font-bold hover:text-yellow-800 hover:underline"
-										>
-											Blog and social posts
-										</a>
-										<div className="text-sm text-gray-600">
-											<svg
-												xmlns="http://www.w3.org/2000/svg"
-												width="1em"
-												height="1em"
-												fill="currentColor"
-												className="text-gray-800 inline align-middle mr-1"
-												viewBox="0 0 16 16"
-											>
-												<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-											</svg>
-											Deadline is today
-										</div>
-									</div>
-									<div className="p-4 bg-white border rounded-xl text-gray-800 space-y-2">
-										<div className="flex justify-between">
-											<div className="text-gray-400 text-xs">
-												Grace Aroma
-											</div>
-											<div className="text-gray-400 text-xs">7d</div>
-										</div>
-										<a
-											href="javascript:void(0)"
-											className="font-bold hover:text-yellow-800 hover:underline"
-										>
-											New campaign review
-										</a>
-										<div className="text-sm text-gray-600">
-											<svg
-												xmlns="http://www.w3.org/2000/svg"
-												width="1em"
-												height="1em"
-												fill="currentColor"
-												className="text-gray-800 inline align-middle mr-1"
-												viewBox="0 0 16 16"
-											>
-												<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-											</svg>
-											New feedback
-										</div>
-									</div>
-									<div className="p-4 bg-white border rounded-xl text-gray-800 space-y-2">
-										<div className="flex justify-between">
-											<div className="text-gray-400 text-xs">
-												Petz App
-											</div>
-											<div className="text-gray-400 text-xs">2h</div>
-										</div>
-										<a
-											href="javascript:void(0)"
-											className="font-bold hover:text-yellow-800 hover:underline"
-										>
-											Cross-platform and browser QA
-										</a>
-									</div>
+											);
+									})}
+									
+									
 								</div>
 							</div>
 						</div>
