@@ -28,7 +28,6 @@ export async function storeData(dataToStore, userEmail) {
 	}
 }
 
-// Function to retrieve data from Firestore
 export async function retrieveData(email) {
 	try {
 		const q = query(collection(db, "userSuggestions"), where("email", "==", email));
@@ -42,24 +41,40 @@ export async function retrieveData(email) {
 export async function getMostRecentDocument(userEmail) {
 	try {
 		const collectionRef = collection(db, "userSuggestions");
-		// Create a query that orders documents by the timestamp field in descending order
 		const queryRef = query(
 			collectionRef,
 			where("email", "==", userEmail),
 			orderBy("timestamp", "desc")
 		);
 
-		// Retrieve the most recent document
 		const snapshot = await getDocs(queryRef);
 
 		if (snapshot.docs.length > 0) {
-			// Get the data of the most recent document
 			const mostRecentDocumentData = snapshot.docs[0].data();
 
 			return { success: true, data: mostRecentDocumentData };
 		} else {
 			return { success: false, message: "No documents found in the collection." };
 		}
+	} catch (error) {
+		return { success: false, message: error.message };
+	}
+}
+
+export async function getDocumentsForUserAndDate(userEmail, targetDate) {
+	try {
+		const collectionRef = collection(db, "userSuggestions");
+		const queryRef = query(
+			collectionRef,
+			where("email", "==", userEmail),
+			where("timestamp", ">=", targetDate),
+			where("timestamp", "<", targetDate + "T23:59:59")
+		);
+
+		const snapshot = await getDocs(queryRef);
+		const documents = snapshot.docs.map((doc) => doc.data());
+
+		return { success: true, data: documents };
 	} catch (error) {
 		return { success: false, message: error.message };
 	}
