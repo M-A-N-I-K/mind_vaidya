@@ -9,7 +9,7 @@ const InputComponent = () => {
     const [userInput, setUserInput] = useState("");
     const [user] = getUser();
     const [loading, setLoading] = useState(false);
-    const { result, setResult, parsedResult, setParsedResult } = useUserSuggestions();
+    const { parsedResult, setParsedResult } = useUserSuggestions();
     const navigate = useNavigate();
 
     const prompt = `You are the world's most renowned, creative, and witty mental health expert, known for your work in the field of Behavioral Psychology, childhood trauma, CBT, depression, and anxiety. 
@@ -73,7 +73,7 @@ const InputComponent = () => {
             console.log("Choices", data?.choices);
             console.log("Message", data?.choices[0]?.message);
             console.log("Content", data?.choices[0]?.message?.content);
-            setResult(data?.choices[0]?.message?.content);
+            console.log("Reuslt", data?.choices[0]?.message?.content);
             if (data?.choices[0]?.message?.content) {
                 const parsedData = JSON.parse(data?.choices[0]?.message?.content);
                 setParsedResult(parsedData);
@@ -89,9 +89,8 @@ const InputComponent = () => {
     }
 
     useEffect(() => {
-        console.log("Result", result);
         console.log("Parsed Data", parsedResult);
-    }, [result])
+    }, [parsedResult])
 
     return (
         <>
