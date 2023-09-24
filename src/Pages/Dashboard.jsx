@@ -52,7 +52,7 @@ const Dashboard = () => {
 									{recentDoc?.data?.todo?.map((item, key) => {
 										return (
 
-											<div key={key} className="p-4 bg-white border rounded-xl text-gray-800 space-y-2">
+											<div key={key} className="p-4 bg-yellow-100 border rounded-xl text-gray-800 space-y-2">
 												<p
 
 													className="font-bold hover:text-yellow-800 hover:underline"
