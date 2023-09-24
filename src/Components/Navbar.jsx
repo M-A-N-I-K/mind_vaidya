@@ -1,10 +1,10 @@
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
-import { logout, auth } from '../Config/auth';
+import { logout } from '../Config/auth';
 import { useState } from 'react';
+import getUser from '../Hooks/getUser';
 
 const Navbar = () => {
-    const [user] = useAuthState(auth);
+    const [user] = getUser();
     const [openNav, setOpenNav] = useState(false);
     return (
         <nav className="fixed w-[100vw] top-0 h-[10vh] px-4 py-4 flex justify-between items-center bg-white">

@@ -8,9 +8,9 @@ const UserSuggestions = createContext(initContextState);
 
 export const UserSuggestionsProvider = ({ children }) => {
 	const [result, setResult] = useState(initState);
-	const [parsedResult,setParsedResult] = useState({});
+	const [parsedResult, setParsedResult] = useState({});
 	return (
-		<UserSuggestions.Provider value={{ result, setResult,parsedResult,setParsedResult }}>
+		<UserSuggestions.Provider value={{ result, setResult, parsedResult, setParsedResult }}>
 			{children}
 		</UserSuggestions.Provider>
 	);

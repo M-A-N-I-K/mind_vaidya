@@ -1,9 +1,15 @@
 import { useEffect, useState } from "react"
 import useUserSuggestions from "../Hooks/useUserSuggestions"
+import { storeData } from "../Config/userSuggestions"
+import { useNavigate } from "react-router-dom";
+import getUser from "../Hooks/getUser";
 
 const InputComponent = () => {
     const [userInput, setUserInput] = useState("");
-    const {result, setResult,setParsedResult} = useUserSuggestions();
+    const [user] = getUser();
+    const { result, setResult, parsedResult, setParsedResult } = useUserSuggestions();
+    const navigate = useNavigate();
+
     const prompt = `You are the world's most renowned, creative, and witty mental health expert, known for your work in the field of Behavioral Psychology, childhood trauma, CBT, depression, and anxiety. 
     Here is a journal entry: <user entry>.
     
@@ -63,9 +69,14 @@ const InputComponent = () => {
             const data = await response.json();
             console.log("Choices", data?.choices);
             console.log("Message", data?.choices[0]?.message);
-            setMoodCard(data?.choices[0]?.message?.content.split(/\n/));
             console.log("Content", data?.choices[0]?.message?.content);
             setResult(data?.choices[0]?.message?.content);
+            if (data?.choices[0]?.message?.content) {
+                const parsedData = JSON.parse(data?.choices[0]?.message?.content);
+                setParsedResult(parsedData);
+                storeData(parsedData, user.email);
+                navigate("/dashboard")
+            }
             setUserInput("");
         }
         else {
@@ -75,10 +86,7 @@ const InputComponent = () => {
 
     useEffect(() => {
         console.log("Result", result);
-        if (result){
-            setParsedResult(JSON.parse(result));
-            console.log("Parsed Result" , parsedResult);
-        }
+        console.log("Parsed Data", parsedResult);
     }, [result])
 
     return (

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from "react-router-dom";
-import { auth, logInWithEmailAndPassword, signInWithGoogle, registerWithEmailAndPassword } from "../Config/auth";
-import { useAuthState } from 'react-firebase-hooks/auth';
+import { logInWithEmailAndPassword, signInWithGoogle, registerWithEmailAndPassword } from "../Config/auth";
+import getUser from '../Hooks/getUser';
 
 const LoginSignUp = ({ showName, authName, showForgotPassword }) => {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
-    const [user, loading, error] = useAuthState(auth);
+    const [user, loading, error] = getUser();
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -15,7 +15,6 @@ const LoginSignUp = ({ showName, authName, showForgotPassword }) => {
             return;
         }
         if (user) setTimeout(navigate("/home"), [1000]);
-        console.log(user);
     }, [user, loading]);
 
     const login = () => {
