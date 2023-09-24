@@ -47,7 +47,7 @@ const Navbar = () => {
                     </svg>
                 </li>
                 <li>
-                    <Link className="text-sm text-gray-700 hover:text-gray-800" to="/pricing">Pricing</Link>
+                    <Link className="text-sm text-gray-700 hover:text-gray-800" to="/quiz">Quiz</Link>
                 </li>
                 <li className="text-gray-300">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" className="w-4 h-4 current-fill" viewBox="0 0 24 24">
@@ -55,7 +55,7 @@ const Navbar = () => {
                     </svg>
                 </li>
                 <li>
-                    <Link className="text-sm text-gray-700 hover:text-gray-800" to="/contact">Contact</Link>
+                    <Link className="text-sm text-gray-700 hover:text-gray-800" to="/pricing">Pricing</Link>
                 </li>
             </ul>
             {!user ?

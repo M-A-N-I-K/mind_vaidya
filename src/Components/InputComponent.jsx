@@ -71,7 +71,7 @@ const InputComponent = () => {
                     Generate Solution
                 </button>
             </div>
-            
+
         </div>
 
     )
