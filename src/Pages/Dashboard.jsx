@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import useUserData from "../Hooks/getUserData";
-import useUserSuggestions from "../Hooks/useUserSuggestions";
 import RecommendationCard from "../Utils/RecommendationCard"
 
 
