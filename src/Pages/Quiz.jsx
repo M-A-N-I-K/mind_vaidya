@@ -49,12 +49,12 @@ const Quiz = ({ questions }) => {
     };
 
     return (
-        <div className="w-[100vw] h-[100vh] bg-white flex items-center justify-center">
+        <div className="w-[100vw] h-[100vh] bg-gradient-to-r from-gray-900 via-black to-gray-900 flex items-center justify-center">
 
-            <div className="bg-white p-5 md:p-8 max-h-[500px] max-w-[500px] space-y-8 shadow rounded-lg h-[11/12] w-11/12 ">
+            <div className="bg-gray-700 p-5 md:p-8 max-h-[500px] max-w-[500px] space-y-8 shadow rounded-lg text-gray-50 h-[11/12] w-11/12 ">
                 {!showResult ? (
                     <>
-                        <p className="text-left text-xl pb-2 text-blue-600">
+                        <p className="text-left text-xl pb-2 font-bold text-green-600">
                             Question :{" "}
                             <span className="text-xl font-bold">
                                 {currentQuestion + 1}
@@ -68,14 +68,14 @@ const Quiz = ({ questions }) => {
                                 <li
                                     onClick={() => onAnswerClick(choice, index)}
                                     key={choice}
-                                    className={`${answerIdx === index ? "bg-blue-500 text-white  hover:bg-blue-400" : "border-[1px] border-black bg-white text-black"} my-2  cursor-pointer p-2 w-4/5 rounded-lg mx-auto`}
+                                    className={`${answerIdx === index ? "bg-green-500 text-white  hover:bg-green-400" : "border-[1px] border-black bg-white text-black"} my-2  cursor-pointer p-2 w-4/5 rounded-lg mx-auto`}
                                 >
                                     {choice}
                                 </li>
                             ))}
                         </ul>
                         <div className="flex w-full items-center justify-center">
-                            <button className="py-2 px-4 text-medium flex rounded-lg text-white bg-blue-600 hover:bg-blue-400" onClick={onClickNext} disabled={answerIdx === null}>
+                            <button className="py-2 px-4 text-medium flex rounded-lg text-white bg-green-600 hover:bg-green-400" onClick={onClickNext} disabled={answerIdx === null}>
                                 {currentQuestion === questions.length - 1 ? "Finish" : "Next"}
                             </button>
                         </div>
@@ -97,7 +97,7 @@ const Quiz = ({ questions }) => {
                             {(result.score > 7 && result.score < 15) && <p className="py-2 font-medium"> You deserve more happiness in your life. Have some good company.</p>}
                             {(result.score > 15) && <p className="py-2 font-medium"> You must seek some expert to help you out.</p>}
                             <button
-                                className="bg-blue-600 py-2 px-7 rounded-xl text-white mt-2 hover:bg-blue-500"
+                                className="bg-green-600 py-2 px-7 rounded-xl text-white mt-2 hover:bg-green-500"
                                 onClick={onTryAgain}
                             >
                                 Try Again

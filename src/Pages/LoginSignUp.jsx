@@ -28,34 +28,34 @@ const LoginSignUp = ({ showName, authName, showForgotPassword }) => {
         registerWithEmailAndPassword(name, email, password);
     }
     return (
-        <div className="flex flex-col items-center justify-center w-[100vw] h-[100vh] bg-gray-200 text-gray-700">
+        <div className="flex flex-col items-center justify-center w-[100vw] h-[100vh] bg-gradient-to-r from-gray-900 via-black to-gray-900 text-gray-50">
             <h1 className="font-bold mt-24 text-2xl">Welcome Back to Mind वैद्य :)</h1>
-            <form className="flex flex-col bg-white rounded shadow-lg p-12 mt-12" action="">
+            <form className="flex flex-col bg-gray-700 rounded shadow-lg p-12 mt-12" action="">
                 {
                     showName &&
                     <>
                         <label className="font-semibold text-xs" htmlFor="usernameField">Name</label>
-                        <input className="flex items-center h-8 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2" type="text" onChange={() => setName(e.target.value)} />
+                        <input className="flex items-center h-8 px-4 w-64 bg-gray-500 mt-2 rounded focus:outline-none focus:ring-2" type="text" onChange={() => setName(e.target.value)} />
                     </>
                 }
                 <label className="font-semibold mt-3 text-xs" htmlFor="usernameField">Username or Email</label>
-                <input className="flex items-center h-8 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2" type="text" onChange={() => setEmail(e.target.value)} />
+                <input className="flex items-center h-8 px-4 w-64 bg-gray-500 mt-2 rounded focus:outline-none focus:ring-2" type="text" onChange={() => setEmail(e.target.value)} />
                 <label className="font-semibold text-xs mt-3" htmlFor="passwordField">Password</label>
-                <input className="flex items-center h-8 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2" type="password" onChange={() => setPassword(e.target.value)} />
-                <button className="flex items-center justify-center h-8 px-6 w-64 bg-blue-600 mt-8 rounded font-semibold text-sm text-blue-100 hover:bg-blue-700" onClick={authName === "Login" ? login : signup}>{authName}</button>
+                <input className="flex items-center h-8 px-4 w-64 bg-gray-500 mt-2 rounded focus:outline-none focus:ring-2" type="password" onChange={() => setPassword(e.target.value)} />
+                <button className="flex items-center justify-center h-8 px-6 w-64 bg-green-600 mt-8 rounded font-semibold text-sm text-green-100 hover:bg-green-700" onClick={authName === "Login" ? login : signup}>{authName}</button>
 
                 <button
                     type='button'
-                    className="mt-2 px-4 py-2 border flex justify-center items-center  gap-2 border-slate-200 rounded-lg text-slate-700 hover:border-slate-400 hover:text-slate-900 hover:shadow transition duration-150">
+                    className="mt-2 px-4 py-2 border flex justify-center items-center  gap-2 border-slate-200 rounded-lg text-gray-50 hover:border-gray-200 hover:text-gray-100 hover:shadow transition duration-150">
                     <img className="w-6 h-6" src="https://www.svgrepo.com/show/475656/google-color.svg" loading="lazy" alt="google logo" />
                     <span className='text-xs' onClick={signInWithGoogle}>{authName} with Google</span>
                 </button>
                 {
                     showForgotPassword &&
                     <div className="flex mt-6 justify-center text-xs">
-                        <a className="text-blue-400 hover:text-blue-500" href="#">Forgot Password</a>
+                        <a className="text-green-400 hover:text-green-500" href="#">Forgot Password</a>
                         <span className="mx-2 text-gray-300">/</span>
-                        <Link to="/signup" className="text-blue-400 hover:text-blue-500">Sign Up</Link>
+                        <Link to="/signup" className="text-green-400 hover:text-green-500">Sign Up</Link>
                     </div>
                 }
 

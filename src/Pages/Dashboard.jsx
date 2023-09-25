@@ -6,18 +6,18 @@ const Dashboard = () => {
 	const { recentDoc } = useUserData();
 
 	return (
-		<main className="pt-16 max-h-screen overflow-auto">
+		<main className="pt-16 bg-gradient-to-r from-gray-900 via-black to-gray-900 max-h-screen overflow-auto">
 			<div className="px-6 py-8">
 				<div className="max-w-6xl mx-auto">
-					<div className="bg-white rounded-3xl p-8 mb-5">
-						<h1 className="text-xl text-gray-500 text-center font-bold mb-10">
+					<div className="bg-gray-700 rounded-3xl p-8 mb-5">
+						<h1 className="text-xl text-gray-50 text-center font-bold mb-10">
 							{recentDoc?.data?.message}
 						</h1>
 
 
 						<hr className="my-10" />
 
-						<div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12">
+						<div className="grid grid-cols-1 text-gray-50 lg:grid-cols-2 gap-x-12">
 							<div>
 								<h2 className="text-2xl font-bold mb-4">Recommendations</h2>
 

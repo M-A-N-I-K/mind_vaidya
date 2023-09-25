@@ -18,7 +18,7 @@ const RecommendationCard = ({ title, data }) => {
                 <div className="mt-5">
                     <button
                         type="button"
-                        className="inline-flex items-center justify-center py-2 px-3 rounded-xl bg-white text-gray-800 hover:text-green-500 text-sm font-semibold transition"
+                        className="inline-flex items-center justify-center py-2 px-3 rounded-xl bg-gray-600 text-gray-50 hover:text-green-500 text-sm font-semibold transition"
                     >
                         Start Playing
                     </button>
