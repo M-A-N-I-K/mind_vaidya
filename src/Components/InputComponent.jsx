@@ -108,12 +108,12 @@ const InputComponent = () => {
                                     <svg className="w-6 h-6" fill="currentColor" height="200px" width="200px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 487 487" xmlSpace="preserve"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRep_iconCarrier"> <g> <g> <path d="M308.1,277.95c0,35.7-28.9,64.6-64.6,64.6s-64.6-28.9-64.6-64.6s28.9-64.6,64.6-64.6S308.1,242.25,308.1,277.95z M440.3,116.05c25.8,0,46.7,20.9,46.7,46.7v122.4v103.8c0,27.5-22.3,49.8-49.8,49.8H49.8c-27.5,0-49.8-22.3-49.8-49.8v-103.9 v-122.3l0,0c0-25.8,20.9-46.7,46.7-46.7h93.4l4.4-18.6c6.7-28.8,32.4-49.2,62-49.2h74.1c29.6,0,55.3,20.4,62,49.2l4.3,18.6H440.3z M97.4,183.45c0-12.9-10.5-23.4-23.4-23.4c-13,0-23.5,10.5-23.5,23.4s10.5,23.4,23.4,23.4C86.9,206.95,97.4,196.45,97.4,183.45z M358.7,277.95c0-63.6-51.6-115.2-115.2-115.2s-115.2,51.6-115.2,115.2s51.6,115.2,115.2,115.2S358.7,341.55,358.7,277.95z"></path> </g> </g> </g></svg>
                                 </button>
                             </div>
-                            <div className="px-4 py-2 bg-white rounded-b-lg">
+                            <div className="px-4 py-2 bg-gray-50 shadow-lg rounded-b-lg">
                                 <label htmlFor="editor" className="sr-only">Publish post</label>
-                                <textarea onChange={(e) => setUserInput(e.target.value)} id="editor" rows="12" className="block w-full px-0 text-sm text-gray-800 bg-white border-0 outline-none" placeholder="Write Your thoughts..." required></textarea>
+                                <textarea onChange={(e) => setUserInput(e.target.value)} id="editor" rows="12" className="block w-full px-0 text-sm text-gray-800 bg-gray-50 border-0 outline-none" placeholder="Write Your thoughts here..." required></textarea>
                             </div>
                         </div>
-                        <button type="button" onClick={getQuery} className="inline-flex  w-full justify-center items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
+                        <button type="button" onClick={getQuery} className="inline-flex  w-full justify-center items-center px-5 py-2.5 text-sm font-semibold text-center text-white bg-blue-500 rounded-lg focus:ring-4 focus:ring-blue-200 hover:bg-blue-700">
                             Generate Solution
                         </button>
                     </div>

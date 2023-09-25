@@ -3,7 +3,7 @@ const RecommendationCard = ({ title, data }) => {
         <div className="delay-5 flex justify-between duration-100 bg-green-100 p-5 rounded-lg">
             <img src="https://picsum.photos/250/250" className="w-32 rounded shadow" />
 
-            <div className="p-4 bg-green-100 rounded-xl">
+            <div className="p-4 bg-green-10 w-3/4 rounded-xl">
                 <div className="font-bold text-xl text-gray-800 leading-none">
                     {title}
                 </div>

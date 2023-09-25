@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import useUserData from "../Hooks/getUserData";
 import RecommendationCard from "../Utils/RecommendationCard"
 
@@ -6,9 +5,6 @@ import RecommendationCard from "../Utils/RecommendationCard"
 const Dashboard = () => {
 	const { recentDoc } = useUserData();
 
-	useEffect(() => {
-		console.log(recentDoc);
-	}, [recentDoc])
 	return (
 		<main className="pt-16 max-h-screen overflow-auto">
 			<div className="px-6 py-8">
@@ -23,11 +19,15 @@ const Dashboard = () => {
 
 						<div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12">
 							<div>
-								<h2 className="text-2xl font-bold mb-4">Stats</h2>
+								<h2 className="text-2xl font-bold mb-4">Recommendations</h2>
 
 								<div className="grid grid-cols-2 gap-4">
 									<div className="col-span-2">
 										<RecommendationCard title={"Song Recommendation"} data={recentDoc?.data?.music} />
+									</div>
+
+									<div className="col-span-2">
+										<RecommendationCard title={"Movie Recommendation"} data={recentDoc?.data?.movie} />
 									</div>
 									<div className="col-span-2">
 										<div className="p-4 bg-yellow-100 rounded-xl text-gray-800">
@@ -36,10 +36,6 @@ const Dashboard = () => {
 											</div>
 											<div className="mt-2 text-sm">{recentDoc?.data?.food}</div>
 										</div>
-									</div>
-
-									<div className="col-span-2">
-										<RecommendationCard title={"Movie Recommendation"} data={recentDoc?.data?.movie} />
 									</div>
 								</div>
 							</div>
