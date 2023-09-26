@@ -5,7 +5,7 @@ const ProfileCard = ({ profile }) => {
     ).href;
 
     return (
-        <section className="w-64 cursor-pointer mx-auto bg-[#20354b] rounded-2xl px-8 py-6 shadow-lg">
+        <section className="w-64 animate-fade-up cursor-pointer mx-auto bg-[#20354b] rounded-2xl px-8 py-6 shadow-lg">
             <div className="mt-6 w-fit mx-auto">
                 <img src={img} className="rounded-full w-28 " alt="profile picture" srcset="" />
             </div>

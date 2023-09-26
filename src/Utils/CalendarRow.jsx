@@ -20,7 +20,7 @@ const CalendarRow = ({
         const month = currentMonth + 1;
         const dayStr = `${currentYear}-${month < 10 ? ("0" + month) : month}-${day}`;
         const docs = await getDocumentsForUserAndDate(user.email, dayStr);
-        setModalData(docs?.data);
+        setModalData([...docs?.data]);
         setHideModal(!hideModal);
     }
     //first row with empty spaces
@@ -29,7 +29,7 @@ const CalendarRow = ({
             content.push(<td></td>);
         }
         content.push(
-            <td key={1} onClick={() => handleModal(1)} className="cursor-pointer relative py-3 px-2 md:px-3  hover:text-green-500 text-center text-gray-50">
+            <td key={1} onClick={() => handleModal(1)} className="cursor-pointer relative py-3 px-2 md:px-3  hover:text-indigo-300 text-center text-gray-50">
                 1
             </td>
         );
@@ -40,13 +40,13 @@ const CalendarRow = ({
                     {activeDay === i + 1 &&
                         new Date().getMonth() === currentMonth &&
                         new Date().getFullYear() === currentYear ? (
-                        <td key={i} onClick={() => handleModal(i + 1)} className="cursor-pointer relative py-3 px-2 md:px-3  hover:text-green-500 text-center text-gray-50">
-                            <span className="p-1 rounded-full border-green-500 border-2">
+                        <td key={i} onClick={() => handleModal(i + 1)} className="cursor-pointer relative py-3 px-2 md:px-3  hover:text-indigo-300 text-center text-gray-50">
+                            <span className="p-1 rounded-full border-indigo-300 border-2">
                                 {i + 1}
                             </span>
                         </td>
                     ) : (
-                        <td key={i} onClick={() => handleModal(i + 1)} className="cursor-pointer relative py-3 px-2 md:px-3  hover:text-green-500 text-center text-gray-50">
+                        <td key={i} onClick={() => handleModal(i + 1)} className="cursor-pointer relative py-3 px-2 md:px-3  hover:text-indigo-300 text-center text-gray-50">
                             {i + 1}
                         </td>
                     )}
@@ -63,13 +63,13 @@ const CalendarRow = ({
                     {activeDay === i + (7 * row - firstDay) &&
                         new Date().getMonth() === currentMonth &&
                         new Date().getFullYear() === currentYear ? (
-                        <td key={i + (7 * row - firstDay)} onClick={() => handleModal(i + (7 * row - firstDay))} className="cursor-pointer relative py-3 px-2 md:px-3  hover:text-green-500 text-center text-gray-50">
-                            <span className="p-1 rounded-full border-green-500 border-2">
+                        <td key={i + (7 * row - firstDay)} onClick={() => handleModal(i + (7 * row - firstDay))} className="cursor-pointer relative py-3 px-2 md:px-3  hover:text-indigo-300 text-center text-gray-50">
+                            <span className="p-1 rounded-full border-indigo-300 border-2">
                                 {i + (7 * row - firstDay)}
                             </span>
                         </td>
                     ) : (
-                        <td key={i + (7 * row - firstDay)} onClick={() => handleModal(i + (7 * row - firstDay))} className="cursor-pointer relative py-3 px-2 md:px-3  hover:text-green-500 text-center text-gray-50">
+                        <td key={i + (7 * row - firstDay)} onClick={() => handleModal(i + (7 * row - firstDay))} className="cursor-pointer relative py-3 px-2 md:px-3  hover:text-indigo-300 text-center text-gray-50">
                             {i + (7 * row - firstDay)}
                         </td>
                     )}

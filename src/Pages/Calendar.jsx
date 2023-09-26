@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import CalendarRow from "../Utils/CalendarRow";
+import Modal from "../Components/Modal"
 
 const Calendar = () => {
     const [activeMonth, setActiveMonth] = useState(new Date().getMonth());
@@ -31,7 +32,7 @@ const Calendar = () => {
 
     return (
         <div className="flex justify-center items-center h-[100vh] w-[100vw]  bg-gradient-to-r from-gray-900 via-black to-gray-900">
-            <div className="md:shadow-lg md:rounded p-4 bg-gray-700 md:w-96 mx-4 md:mx-auto mt-32">
+            <div className="md:shadow-lg md:rounded p-4 animate-fade animate-delay-100 animate-duration-3000 bg-gray-700 w-96 mx-4 md:mx-auto mt-32">
                 <div className="w-full rounded">
                     <div className="flex items-center justify-between mb-4">
                         <div className="text-left font-bold text-xl text-gray-50 ">
@@ -39,7 +40,7 @@ const Calendar = () => {
                         </div>
                         <div className="flex space-x-4">
                             <button
-                                className="p-2 rounded bg-green-500 text-white"
+                                className="p-2 rounded bg-indigo-700 text-white"
                                 onClick={() => {
                                     if (prevMonth.current === 0) {
                                         setActiveYear(activeYear - 1);
@@ -62,7 +63,7 @@ const Calendar = () => {
                                 </svg>
                             </button>
                             <button
-                                className="p-2 rounded bg-green-500 text-white"
+                                className="p-2 rounded bg-indigo-700 text-white"
                                 onClick={() => {
                                     if (prevMonth.current === 11) {
                                         setActiveYear(activeYear + 1);
@@ -201,31 +202,7 @@ const Calendar = () => {
                     </div>
                 </div>
             </div>
-            <div className={`fixed z-10 overflow-y-auto top-0 w-full left-0 ${hideModal ? "hidden" : ""}`} id="modal">
-                <div className="flex items-center justify-center h-[100vh] pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-                    <div className="fixed inset-0 transition-opacity">
-                        <div className="absolute inset-0 bg-gray-900 opacity-75" />
-                    </div>
-                    <span className="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
-                    <div className="inline-block align-center bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle max-w-lg w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
-                        <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                            {
-                                modalData?.length > 0 ?
-                                    modalData?.map((data) => {
-                                        return (
-                                            <h1>{data?.message}</h1>
-                                        );
-                                    }) :
-                                    <h1>No Data To Show</h1>
-                            }
-
-                        </div>
-                        <div className="bg-gray-200 px-4 py-3 text-right">
-                            <button onClick={() => setHideModal(!hideModal)} type="button" className="py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-800 mr-2" ><i className="fas fa-times"></i> Cancel</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {!hideModal && <Modal modalData={modalData} hideModal={hideModal} setHideModal={setHideModal} />}
         </div>
     );
 };

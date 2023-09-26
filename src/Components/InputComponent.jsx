@@ -96,7 +96,7 @@ const InputComponent = () => {
         <>
             {loading ? <Loader />
                 :
-                <div className='w-[100vw] flex flex-col justify-between items-center'>
+                <div className='animate-fade animate-delay-100 animate-duration-3000 w-[100vw] flex flex-col justify-between items-center'>
                     <div className='w-11/12 lg:w-3/4 h-[40vh]'>
                         <div className="w-full mb-4 border border-gray-200 rounded-lg bg-gray-700 ">
                             <div className="flex items-center justify-center px-3 py-2 border-b ">

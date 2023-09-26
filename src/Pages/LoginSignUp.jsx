@@ -14,7 +14,7 @@ const LoginSignUp = ({ showName, authName, showForgotPassword }) => {
         if (loading) {
             return;
         }
-        if (user) setTimeout(navigate("/home"), [1000]);
+        if (user) setTimeout(navigate("/quiz"), [1000]);
     }, [user, loading]);
 
     const login = () => {
@@ -42,7 +42,7 @@ const LoginSignUp = ({ showName, authName, showForgotPassword }) => {
                 <input className="flex items-center h-8 px-4 w-64 bg-gray-500 mt-2 rounded focus:outline-none focus:ring-2" type="text" onChange={() => setEmail(e.target.value)} />
                 <label className="font-semibold text-xs mt-3" htmlFor="passwordField">Password</label>
                 <input className="flex items-center h-8 px-4 w-64 bg-gray-500 mt-2 rounded focus:outline-none focus:ring-2" type="password" onChange={() => setPassword(e.target.value)} />
-                <button className="flex items-center justify-center h-8 px-6 w-64 bg-green-600 mt-8 rounded font-semibold text-sm text-green-100 hover:bg-green-700" onClick={authName === "Login" ? login : signup}>{authName}</button>
+                <button className="flex items-center justify-center h-8 px-6 w-64 bg-indigo-600 mt-8 rounded font-semibold text-sm text-indigo-100 hover:bg-indigo-700" onClick={authName === "Login" ? login : signup}>{authName}</button>
 
                 <button
                     type='button'
@@ -53,9 +53,9 @@ const LoginSignUp = ({ showName, authName, showForgotPassword }) => {
                 {
                     showForgotPassword &&
                     <div className="flex mt-6 justify-center text-xs">
-                        <a className="text-green-400 hover:text-green-500" href="#">Forgot Password</a>
+                        <a className="text-indigo-400 hover:text-indigo-500" href="#">Forgot Password</a>
                         <span className="mx-2 text-gray-300">/</span>
-                        <Link to="/signup" className="text-green-400 hover:text-green-500">Sign Up</Link>
+                        <Link to="/signup" className="text-indigo-400 hover:text-indigo-500">Sign Up</Link>
                     </div>
                 }
 

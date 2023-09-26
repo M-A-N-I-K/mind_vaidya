@@ -3,15 +3,14 @@ import { HashRouter, Route, Routes } from 'react-router-dom'
 import Navbar from './Components/Navbar'
 import Loader from './Utils/Loader'
 import { jsQuizz } from './Config/Constants'
-import Modal from './Components/Modal'
-import Expert from './Pages/Expert'
-import Pricing from './Pages/Pricing'
 
 const Home = lazy(() => import("./Pages/Home"))
 const LoginSignUp = lazy(() => import('./Pages/LoginSignUp'))
 const CalendarComponent = lazy(() => import("./Pages/Calendar"))
 const Dashboard = lazy(() => import("./Pages/Dashboard"))
 const Quiz = lazy(() => import("./Pages/Quiz"))
+const Expert = lazy(() => import("./Pages/Expert"))
+const Pricing = lazy(() => import("./Pages/Pricing"))
 
 const App = () => {
   return (
@@ -27,7 +26,7 @@ const App = () => {
         <Route path='/signup' element={<Suspense fallback={<Loader />}>
           <LoginSignUp showName={true} authName="Signup" showForgotPassword={false} />
         </Suspense>} />
-        <Route path='/calendar' element={<Suspense fallback={<Loader />}>
+        <Route path='/memories' element={<Suspense fallback={<Loader />}>
           <CalendarComponent />
         </Suspense>} />
         <Route path='/dashboard' element={<Suspense fallback={<Loader />}>
@@ -35,9 +34,6 @@ const App = () => {
         </Suspense>} />
         <Route path='/quiz' element={<Suspense fallback={<Loader />}>
           <Quiz questions={jsQuizz.questions} />
-        </Suspense>} />
-        <Route path='/modal-check' element={<Suspense fallback={<Loader />}>
-          <Modal />
         </Suspense>} />
         <Route path='/expert-support' element={<Suspense fallback={<Loader />}>
           <Expert />
