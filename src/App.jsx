@@ -3,6 +3,9 @@ import { HashRouter, Route, Routes } from 'react-router-dom'
 import Navbar from './Components/Navbar'
 import Loader from './Utils/Loader'
 import { jsQuizz } from './Config/Constants'
+import Modal from './Components/Modal'
+import Expert from './Pages/Expert'
+import Pricing from './Pages/Pricing'
 
 const Home = lazy(() => import("./Pages/Home"))
 const LoginSignUp = lazy(() => import('./Pages/LoginSignUp'))
@@ -32,6 +35,15 @@ const App = () => {
         </Suspense>} />
         <Route path='/quiz' element={<Suspense fallback={<Loader />}>
           <Quiz questions={jsQuizz.questions} />
+        </Suspense>} />
+        <Route path='/modal-check' element={<Suspense fallback={<Loader />}>
+          <Modal />
+        </Suspense>} />
+        <Route path='/expert-support' element={<Suspense fallback={<Loader />}>
+          <Expert />
+        </Suspense>} />
+        <Route path='/pricing' element={<Suspense fallback={<Loader />}>
+          <Pricing />
         </Suspense>} />
       </Routes>
     </HashRouter>

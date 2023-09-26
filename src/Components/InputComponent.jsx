@@ -113,7 +113,7 @@ const InputComponent = () => {
                                 <textarea onChange={(e) => setUserInput(e.target.value)} id="editor" rows="12" className="block w-full px-0 text-sm text-gray-50 bg-gray-700 border-0 outline-none" placeholder="Write Your thoughts here..." required></textarea>
                             </div>
                         </div>
-                        <button type="button" onClick={getQuery} className="inline-flex  w-full justify-center items-center px-5 py-2.5 text-sm font-semibold text-center text-white bg-green-500 rounded-lg focus:ring-4 focus:ring-green-200 hover:bg-green-700">
+                        <button type="button" onClick={getQuery} className="inline-flex  w-full justify-center items-center px-5 py-2.5 text-sm font-semibold text-center text-white bg-gray-800 rounded-lg focus:ring-4 focus:ring-gray-200 hover:bg-gray-500">
                             Generate Insights
                         </button>
                     </div>
