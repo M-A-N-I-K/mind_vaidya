@@ -1,8 +1,7 @@
 Based on the information you provided, here's a README file for your mental health support platform project:
 
 ---
-
-# Mental Health Support Platform
+![mind_vaidya](https://socialify.git.ci/M-A-N-I-K/mind_vaidya/image?description=1&descriptionEditable=Mind%20Vaidya%20is%20a%20personalized%20platform%20offering%20mood%20recognition%2C%20tailored%20advice%2C%20and%20a%20volunteer%20network.&forks=1&language=1&name=1&owner=1&pattern=Brick%20Wall&stargazers=1&theme=Dark)
 
 ## Overview
 
