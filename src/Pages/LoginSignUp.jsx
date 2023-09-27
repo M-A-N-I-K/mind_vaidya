@@ -20,6 +20,7 @@ const LoginSignUp = ({ showName, authName, showForgotPassword }) => {
     const login = () => {
         logInWithEmailAndPassword(email, password);
     }
+
     const signup = () => {
         if (!name) {
             alert("Please enter name")
