@@ -26,6 +26,15 @@ The **Mental Health Support Platform** is a secure and personalized platform des
 
 - **Backend**: Powered by Firebase for scalability, security, and real-time database capabilities.
 
+## Screenshots
+![image](https://github.com/M-A-N-I-K/mind_vaidya/assets/95385759/7b93e0b9-bafe-47ba-8657-78d3168ddb3f)
+![image](https://github.com/M-A-N-I-K/mind_vaidya/assets/95385759/c9d9e99b-caf4-401f-b064-e61a158bcab4)
+![image](https://github.com/M-A-N-I-K/mind_vaidya/assets/95385759/0776ba13-8057-47e5-a0e7-dd51cd498075)
+![image](https://github.com/M-A-N-I-K/mind_vaidya/assets/95385759/a9fb2ab5-168b-44f2-9823-6e689368fb02)
+![image](https://github.com/M-A-N-I-K/mind_vaidya/assets/95385759/186c340d-dbe9-4fa9-b889-20ae037b7853)
+![image](https://github.com/M-A-N-I-K/mind_vaidya/assets/95385759/1e6fe17e-2c38-4c51-880f-609798c5f60e)
+
+
 ## Installation
 
 To run this project locally, follow these steps:
@@ -35,7 +44,6 @@ To run this project locally, follow these steps:
    ```
    git clone https://github.com/M-A-N-I-K/mind_vaidya
    ```
-
 2. Install project dependencies.
    
    ```
@@ -48,11 +56,8 @@ To run this project locally, follow these steps:
    npm run dev
    ```
 
-4. Access the platform in your web browser at `http://localhost:3000`.
+4. Access the platform in your web browser at `http://localhost:5173`.
 
-## Contributing
-
-We welcome contributions from the community. Please refer to our [Contribution Guidelines](CONTRIBUTING.md) for more information on how to get involved.
 
 ## License
 
