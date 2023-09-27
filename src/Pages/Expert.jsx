@@ -8,7 +8,7 @@ const profileData = [
         experience: '21',
         contact: 'CR Park,Delhi  EHSAAS',
         Fees: '₹2000',
-        imageSrc: '../Images/dr-manish-sarkar-psychiatrist-delhi-2cd483e6-e14a-4148-8bbf-a2fad49be69a.jpg',
+        imageSrc: '/dr-manish-sarkar-psychiatrist-delhi-2cd483e6-e14a-4148-8bbf-a2fad49be69a.jpg',
     },
     {
         id: 2,
@@ -16,7 +16,7 @@ const profileData = [
         experience: '20',
         contact: 'Pusa Road,Delhi  BLK-Max Super Speciality',
         Fees: '₹1800',
-        imageSrc: '../Images/dr-manish-jain-psychiatrist-delhi-48762b8f-6d21-4699-94b4-47d130ee396a.jpg',
+        imageSrc: '/dr-manish-jain-psychiatrist-delhi-48762b8f-6d21-4699-94b4-47d130ee396a.jpg',
     },
     {
         id: 3,
@@ -24,7 +24,7 @@ const profileData = [
         experience: '18',
         contact: 'Karol Bagh,Delhi  Delhi Mind Clinic',
         Fees: '₹1200',
-        imageSrc: '../Images/dr-sugandha-gupta-psychiatrist-delhi-c5c16569-197f-487e-9642-74479b0a4bcc.jpg',
+        imageSrc: '/dr-sugandha-gupta-psychiatrist-delhi-c5c16569-197f-487e-9642-74479b0a4bcc.jpg',
     },
     {
         id: 4,
@@ -32,7 +32,7 @@ const profileData = [
         experience: '12',
         contact: 'Vivek Vihar,Delhi  The HExperty Tree - De-addiction And Mental Health Hospital',
         Fees: '₹1000',
-        imageSrc: '../Images/dr-anuneet-sabharwal-psychiatrist-delhi-ed8dfffa-b3bf-40f2-84cd-31cffccfdbc6 (1).jpg',
+        imageSrc: '/dr-anuneet-sabharwal-psychiatrist-delhi-ed8dfffa-b3bf-40f2-84cd-31cffccfdbc6 (1).jpg',
     },
     {
         id: 5,
@@ -40,7 +40,7 @@ const profileData = [
         experience: '46',
         contact: 'Sarita Vihar,Delhi  Indraprastha Apollo Hospitals',
         Fees: '₹2500',
-        imageSrc: '../Images/dr-monica-chib-psychiatrist-delhi-695318d0-81b8-4dc1-b124-f4296719d1f4.jpg',
+        imageSrc: '/dr-monica-chib-psychiatrist-delhi-695318d0-81b8-4dc1-b124-f4296719d1f4.jpg',
     },
     {
         id: 6,
@@ -48,7 +48,7 @@ const profileData = [
         experience: '17',
         contact: 'Rohini Sector 9,Delhi  Felicity Mind Care Clinic',
         Fees: '₹1500',
-        imageSrc: '../Images/dr-amit-garg-psychiatrist-delhi-c1256e0e-9a55-431a-b715-f534375de336.jpg',
+        imageSrc: '/dr-amit-garg-psychiatrist-delhi-c1256e0e-9a55-431a-b715-f534375de336.jpg',
     },
 ];
 
