@@ -60,8 +60,5 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-For any questions or inquiries, feel free to contact us at [contact@example.com](mailto:contact@example.com).
+For any questions or inquiries, feel free to contact us at [contact@example.com](mailto:manikdhingra0582@gmail.com).
 
----
-
-Feel free to customize this README as needed for your project, and don't forget to create the respective "CONTRIBUTING.md" and "LICENSE" files and update the contact information with your team's details.
