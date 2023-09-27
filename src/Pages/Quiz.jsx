@@ -83,7 +83,7 @@ const Quiz = ({ questions }) => {
                 ) : (
                     <div className="absolute top-0 left-0 h-screen w-full flex items-center bg-[rgba(0,0,0,.5)]">
                         {result.score < 7 && <Confetti />}
-                        <div className=" text-center bg-white p-8 mx-auto rounded-lg max-w-[600px] w-11/12">
+                        <div className=" text-center bg-gray-700 p-8 mx-auto rounded-lg max-w-[600px] w-11/12">
                             <h4 className="text-3xl pb-3 text-center font-bold">
                                 Your score is{" "}
                                 <span className={result.score < 7 ? "text-indigo-600" : "text-red-600"}>
@@ -97,7 +97,7 @@ const Quiz = ({ questions }) => {
                             {(result.score > 7 && result.score < 15) && <p className="py-2 font-medium"> You deserve more happiness in your life. Have some good company.</p>}
                             {(result.score > 15) && <p className="py-2 font-medium"> You must seek some expert to help you out.</p>}
                             <button
-                                className="bg-indigo-600 py-2 px-7 rounded-xl text-white mt-2 hover:bg-indigo-500"
+                                className="bg-indigo-600 py-2 px-7 rounded-xl text-gray-50 mt-2 hover:bg-indigo-500"
                                 onClick={onTryAgain}
                             >
                                 Try Again

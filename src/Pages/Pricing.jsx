@@ -40,21 +40,21 @@ function Pricing() {
                 <div className="mt-16 animate-fade-right space-x-0 md:space-x-6 min-h-[30rem] flex flex-col md:flex-row justify-center items-center">
                     <PricingCard
                         title="Essential"
-                        price={selectMonthly ? "20.99" : "188.9"}
+                        price={selectMonthly ? "$20.99" : "$188.9"}
                         storage="Voice Analysis + Assesment Analysis"
                         users="30"
                         sendUp="0"
                     />
                     <PricingCard
                         title="Deluxe"
-                        price={selectMonthly ? "34.99" : "349.9"}
+                        price={selectMonthly ? "$34.99" : "$349.9"}
                         storage="Basic + Handwriting Analysis"
                         users="50"
                         sendUp="7"
                     />
                     <PricingCard
                         title="Premium"
-                        price={selectMonthly ? "79.99" : "499.9"}
+                        price={selectMonthly ? "$79.99" : "$499.9"}
                         storage="Deluxe + Facial"
                         users="120"
                         sendUp="17"
