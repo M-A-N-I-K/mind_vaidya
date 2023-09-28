@@ -36,13 +36,13 @@ const LoginSignUp = ({ showName, authName, showForgotPassword }) => {
                     showName &&
                     <>
                         <label className="font-semibold text-xs" htmlFor="usernameField">Name</label>
-                        <input className="flex items-center h-8 px-4 w-64 bg-gray-500 mt-2 rounded focus:outline-none focus:ring-2" type="text" onChange={() => setName(e.target.value)} />
+                        <input className="flex items-center h-8 px-4 w-64 bg-gray-500 mt-2 rounded focus:outline-none focus:ring-2" type="text" placeholder='John Doe' onChange={() => setName(e.target.value)} />
                     </>
                 }
                 <label className="font-semibold mt-3 text-xs" htmlFor="usernameField">Username or Email</label>
-                <input className="flex items-center h-8 px-4 w-64 bg-gray-500 mt-2 rounded focus:outline-none focus:ring-2" type="text" onChange={() => setEmail(e.target.value)} />
+                <input className="flex items-center h-8 px-4 w-64 bg-gray-500 mt-2 rounded focus:outline-none focus:ring-2" type="text" placeholder='johndoe@gmail.com' onChange={() => setEmail(e.target.value)} />
                 <label className="font-semibold text-xs mt-3" htmlFor="passwordField">Password</label>
-                <input className="flex items-center h-8 px-4 w-64 bg-gray-500 mt-2 rounded focus:outline-none focus:ring-2" type="password" onChange={() => setPassword(e.target.value)} />
+                <input className="flex items-center h-8 px-4 w-64 bg-gray-500 mt-2 rounded focus:outline-none focus:ring-2" placeholder='*********' type="password" onChange={() => setPassword(e.target.value)} />
                 <button className="flex items-center justify-center h-8 px-6 w-64 bg-indigo-600 mt-8 rounded font-semibold text-sm text-indigo-100 hover:bg-indigo-700" onClick={authName === "Login" ? login : signup}>{authName}</button>
 
                 <button
