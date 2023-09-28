@@ -1,4 +1,5 @@
 const RecommendationCard = ({ title, data }) => {
+
     return (
         <div className="delay-5 flex justify-between duration-100 bg-indigo-100 p-5 rounded-lg">
             <img src="https://picsum.photos/250/250" className="w-32 rounded shadow" />
@@ -7,7 +8,7 @@ const RecommendationCard = ({ title, data }) => {
                 <div className="font-bold text-xl text-gray-800 leading-none">
                     {title}
                 </div>
-                <span className="mt-6 text-gray-700 font-normal text-sm">{data?.song ? data?.song : data}</span>
+                <span className="mt-6 text-gray-700 font-normal text-sm">{data?.song ? data?.song : data?.name ? data?.name : data}</span>
                 {
                     data?.reason &&
                     <div className="mt-6 text-gray-700  font-normal text-sm">

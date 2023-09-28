@@ -2,7 +2,7 @@ import React from 'react'
 import Card from '../Utils/Card'
 
 const Modal = ({ hideModal, setHideModal, modalData }) => {
-    console.log(modalData);
+
     return (
         <div className="absolute top-0 left-0 z-[100] flex flex-col w-screen h-screen overflow-auto text-gray-50 bg-gradient-to-r from-gray-900 via-black to-gray-900">
             <div className="flex items-center flex-shrink-0 w-full h-16 px-10 bg-gray-800 bg-opacity-75">

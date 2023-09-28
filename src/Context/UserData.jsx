@@ -18,9 +18,7 @@ export const UserDataProvider = ({ children }) => {
             .catch((err) => console.log(err.message));
 
         getMostRecentDocument(user?.email)
-            .then((doc) => {
-                setRecentDoc(doc);
-            })
+            .then((doc) => setRecentDoc(doc))
             .catch((err) => console.log(err.message));
     }, [user?.email])
     return (

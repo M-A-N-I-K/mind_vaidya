@@ -57,7 +57,6 @@ export async function getMostRecentDocument(userEmail) {
 
 			if (snapshot.docs.length > 0) {
 				const mostRecentDocumentData = snapshot.docs[0].data();
-
 				return { success: true, data: mostRecentDocumentData };
 			}
 			else {

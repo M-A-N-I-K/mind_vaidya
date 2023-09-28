@@ -34,7 +34,7 @@ const Dashboard = () => {
 											<div className="font-bold text-lg leading-none">
 												Food Recommendations
 											</div>
-											<div className="mt-2 text-sm">{recentDoc?.data?.food}</div>
+											<div className="mt-2 text-sm">{recentDoc?.data?.food ? recentDoc?.data?.food : "You can eat anything"}</div>
 										</div>
 									</div>
 								</div>
