@@ -28,6 +28,7 @@ const LoginSignUp = ({ showName, authName, showForgotPassword }) => {
         };
         registerWithEmailAndPassword(name, email, password);
     }
+
     return (
         <div className="flex flex-col items-center justify-center w-[100vw] h-[100vh] bg-gradient-to-r from-gray-900 via-black to-gray-900 text-gray-50">
             <h1 className="font-bold mt-24 text-2xl">Welcome Back to Mind वैद्य :)</h1>
