@@ -7,7 +7,7 @@ const LoginSignUp = ({ showName, authName, showForgotPassword }) => {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
-    const [user, loading, error] = getUser();
+    const [user, loading] = getUser();
     const navigate = useNavigate();
 
     useEffect(() => {
