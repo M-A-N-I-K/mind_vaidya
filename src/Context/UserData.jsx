@@ -22,7 +22,7 @@ export const UserDataProvider = ({ children }) => {
             .catch((err) => console.log(err.message));
     }, [user?.email])
     return (
-        <UserData.Provider value={{ data, setData, recentDoc }}>
+        <UserData.Provider value={{ data, setData, recentDoc, setRecentDoc }}>
             {children}
         </UserData.Provider>
     );

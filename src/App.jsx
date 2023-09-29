@@ -2,10 +2,10 @@ import { Suspense, lazy } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import Navbar from './Components/Navbar'
 import Loader from './Utils/Loader'
+import LoginSignUp from './Pages/LoginSignUp'
 import { jsQuizz } from './Config/Constants'
 
 const Home = lazy(() => import("./Pages/Home"))
-const LoginSignUp = lazy(() => import('./Pages/LoginSignUp'))
 const CalendarComponent = lazy(() => import("./Pages/Calendar"))
 const Dashboard = lazy(() => import("./Pages/Dashboard"))
 const Quiz = lazy(() => import("./Pages/Quiz"))

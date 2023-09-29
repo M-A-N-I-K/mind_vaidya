@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react"
 import useUserSuggestions from "../Hooks/useUserSuggestions"
-import { storeData } from "../Config/userSuggestions"
+import { storeData, getMostRecentDocument } from "../Config/userSuggestions"
 import { useNavigate } from "react-router-dom";
 import Loader from "../Utils/Loader"
 import getUser from "../Hooks/getUser";
+import useUserData from "../Hooks/getUserData";
 
 const InputComponent = () => {
     const [userInput, setUserInput] = useState("");
     const [user] = getUser();
     const [loading, setLoading] = useState(false);
     const { parsedResult, setParsedResult } = useUserSuggestions();
+    const { setRecentDoc } = useUserData();
     const navigate = useNavigate();
 
     const prompt = `You are the world's most renowned, creative, and witty mental health expert, known for your work in the field of Behavioral Psychology, childhood trauma, CBT, depression, and anxiety. 
@@ -77,7 +79,10 @@ const InputComponent = () => {
             if (data?.choices[0]?.message?.content) {
                 const parsedData = JSON.parse(data?.choices[0]?.message?.content);
                 setParsedResult(parsedData);
-                storeData(parsedData, user.email);
+                await storeData(parsedData, user?.email);
+                getMostRecentDocument(user?.email)
+                    .then((doc) => setRecentDoc(doc))
+                    .catch((err) => console.log(err.message));
                 setLoading(false);
                 navigate("/dashboard")
             }
